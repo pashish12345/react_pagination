@@ -7,6 +7,7 @@ const Data = ({body, title, id}) => {
       <h2>{id}</h2>
       <p>{title} </p>
       <p>{body}</p>
+      <hr/>
     </div>
   )
 }

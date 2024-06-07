@@ -1,0 +1,33 @@
+
+.link-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 30px;
+    list-style: none;
+}
+
+
+.pagelink{
+  text-decoration: none;
+background-color: lime;
+color: brown;
+padding: 10px;
+border-radius: 6px;
+}
+.pagelink:hover{
+    background-color: blueviolet;
+    color: orange;
+}
+
+.pagelink.disabled{
+    pointer-events: none;
+    background-color: gray;
+}
+
+.pagelink.active{
+    background-color:magenta;
+    color: blue;
+}
+

@@ -31,7 +31,7 @@ try {
   }
 
   function previousPage(){
-if(currentPage > 0){
+if(currentPage >=1 ){
   setCurrentPage(currentPage-1)
 }
   }

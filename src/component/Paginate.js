@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "../style.css"
 const Paginate = ({itemPerPage, currentPage,changePage,totalNoOfItems, previousPage,nextPage}) => {
   
 
 let noOfPages = Math.ceil(totalNoOfItems/itemPerPage);
-console.log(noOfPages)
+
 let pageNumber =[];
 
 for(let i=1; i<= noOfPages ; i++){
@@ -13,25 +13,36 @@ for(let i=1; i<= noOfPages ; i++){
 
 
   return (
-    <div>
+
+    <nav>
+      <ul className='link-container'>
       
-      <button type='button' href='#' disabled={currentPage <= 1} onClick={()=>previousPage()}>prev</button>
+      <li className='item'>
+      <a href='#' onClick={()=>previousPage()} 
+      className={`pagelink ${currentPage === 1 ? 'disabled' : " " }`}>prev</a>
+      </li>
       {
         pageNumber?.map((el,i)=>{
          return (
          <>
          
-          <span key={i}> 
+          <li key={i} className={`item `}> 
           
-           <a href='#' onClick={()=>changePage(el)}> {el} </a> </span>
+           <a href='#' onClick={()=>changePage(el) }
+           className={`pagelink ${currentPage === el ? "active" : " "} `}
+           
+           > {el} </a> </li>
           
          
          </>
          )
         })
       }
-       <button type='button' disabled={currentPage >= noOfPages} href='#'onClick={()=>nextPage()} >next</button>
-    </div>
+       <li>
+       <a href='#' className={`pagelink ${currentPage === noOfPages ? "disabled": ""} `} onClick={()=>nextPage()} >next</a>
+       </li>
+    </ul>
+    </nav>
   )
 }
 
